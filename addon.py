@@ -33,22 +33,7 @@ def video_info(link):
         'title': vtitle,
         'thumb': vthumb,
         'info': vinfo
-        }
-
-	page = urllib2.urlopen(ZAP_URL + link)
-	html = page.read()
-	vurl = common.parseDOM(html, "video", ret = "src")[0]
-	vtitle = common.parseDOM(html, "title")[0]
-	vtitle = common.replaceHTMLCodes(vtitle)
-	vthumb = common.parseDOM(html, "video", ret = "poster")[0]
-	vinfo = common.parseDOM(html, "p")[0]
-	vinfo = common.stripTags(vinfo)
-	return {
-		'url': vurl,
-		'title': vtitle,
-		'thumb': vthumb,
-		'info': vinfo
-		}
+    }
 
 def merge_cat(tv,actu):
 	num = len(tv)
