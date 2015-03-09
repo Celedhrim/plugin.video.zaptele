@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
   <!-- Plugin name -->
-  <string id="30000">zap-tele</string>
+  <string id="30000">zaptele</string>
   <string id="30001">All zappings</string>
   <string id="30002">TV zappings</string>
   <string id="30003">News zappings</string>
+  <string id="30100">Cache</string>
+  <string id="30101">Clear cache</string>
+  <string id="30102">The cache is now empty.</string>
+  <string id="30103">Cache time (in hours)</string>
 </strings>

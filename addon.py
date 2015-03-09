@@ -1,4 +1,5 @@
 from xbmcswift2 import Plugin
+import xbmcgui
 import urllib2
 import CommonFunctions
 common = CommonFunctions
@@ -7,9 +8,12 @@ common.plugin = "Zap-tele.com-1.0"
 ZAP_URL = 'http://www.zap-tele.com'
 TELE_CAT = '2'
 ACTU_CAT = '3'
+cache_value = [ 1, 3, 6, 12, 20, 24]
 
 plugin = Plugin()
-storage = plugin.get_storage('storage', TTL=1200)
+cache_time = cache_value[plugin.get_setting('cache_time', int)] * 60
+print cache_time
+storage = plugin.get_storage('storage', TTL=cache_time)
 
 def get_category(category):
 	page = urllib2.urlopen(ZAP_URL + '/posts?category_id=' + category)
@@ -107,6 +111,11 @@ def show_label(label):
 
         return items
 
+@plugin.route('/clear_cache')
+def clear_cache():
+	storage.clear()
+	storage.sync()
+	xbmcgui.Dialog().ok(plugin.get_string(30000), plugin.get_string(30102))
 
 
 if __name__ == '__main__':
