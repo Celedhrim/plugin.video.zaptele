@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.zap-tele.com" name="Zap-tele" version="1.0" provider-name="Celedhrim">
+  <requires>
+    <import addon="xbmc.python" version="2.0"/>
+    <import addon="script.module.xbmcswift2" version="1.1.1"/>
+    <import addon="script.module.parsedom" version="0.9.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <language>fr</language>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <source>http://to_complete</source>
+    <summary lang="en">www.zap-tele.com streaming videos</summary>
+    <description lang="en">Stream french zapping from www.zap-tele.com</description>
+    <summary lang="fr">Accès au video de www.zap-tele.com</summary>
+    <description lang="fr">Accès au zap actu et télé de www.zap-tele.com</description>
+  </extension>
+</addon>
