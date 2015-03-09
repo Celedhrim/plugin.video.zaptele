@@ -19,7 +19,22 @@ def get_category(category):
 	links = common.parseDOM(clean, "a" , ret = "href")
 	return links
 
-#@plugin.cached(24*60)
+def video_info(link):
+    page = urllib2.urlopen(ZAP_URL + link)
+    html = page.read()
+    vurl = common.parseDOM(html, "video", ret = "src")[0]
+    vtitle = common.parseDOM(html, "title")[0]
+    vtitle = common.replaceHTMLCodes(vtitle)
+    vthumb = common.parseDOM(html, "video", ret = "poster")[0]
+    vinfo = common.parseDOM(html, "p")[0]
+    vinfo = common.stripTags(vinfo)
+    return {
+        'url': vurl,
+        'title': vtitle,
+        'thumb': vthumb,
+        'info': vinfo
+        }
+
 	page = urllib2.urlopen(ZAP_URL + link)
 	html = page.read()
 	vurl = common.parseDOM(html, "video", ret = "src")[0]
