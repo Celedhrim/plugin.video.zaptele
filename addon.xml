@@ -12,7 +12,7 @@
     <platform>all</platform>
     <language>fr</language>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <source>http://to_complete</source>
+    <source>https://gitlab.ielf.org/Kodi/plugin.video.zaptele</source>
     <summary lang="en">www.zap-tele.com streaming videos</summary>
     <description lang="en">Stream french zapping from www.zap-tele.com</description>
     <summary lang="fr">Accès au video de www.zap-tele.com</summary>
